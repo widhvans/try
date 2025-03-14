@@ -6,7 +6,7 @@ from pymongo import MongoClient
 # --------------------- Configuration Variables ---------------------
 API_ID = 28196292  # Your API ID from my.telegram.org (Apna API ID daal do)
 API_HASH = "7938119512:AAG3r2E3ag7UEo75wVGkLK9zFWpK7k97SYM"  # Your API Hash from my.telegram.org (Apna API Hash daal do)
-SESSION_FILE = "1BJWap1sBu6RdktbIA6aJGooNFEGKK8_hXJmVyNyGwXNzG4U6RzkC0wVG_j4FXU3fdKFKN8pVnVKzIOkQGoZ4xxXHWB0dQfBUgCWnaOsnsLt2l00R9y8LGk9tWJsrtm0MJPVuJw3-SJwmd25QmQ7W7PLjtnpzmbWp-M4tOP2Aj3UeRwz7yuEMxKf00DB0l8ky7rQdD4ipD_kB__Cblc0y52XSHzrEGBSAsG_9v66dCaHvALeJugd-03JrmrEUve1sYfQ9P7qQFE5MrHzLc_c3nQ7Y1pU5B_Kp_O-3oVqX6eOzjP0KZUiCJIJz7VtoP1Yj8CF4GDrwy8cR5ObNE6dWlFEaaOw6ooA="  # Session file ka naam (e.g., session_file.session)
+SESSION_FILE = "1BJWap1sBu6RdktbIA6aJGooNFEGKK8_hXJmVyNyGwXNzG4U6RzkC0wVG_j4FXU3fdKFKN8pVnVKzIOkQGoZ4xxXHWB0dQfBUgCWnaOsnsLt2l00R9y8LGk9tWJsrtm0MJPVuJw3-SJwmd25QmQ7W7PLjtnpzmbWp-M4tOP2Aj3UeRwz7yuEMxKf00DB0l8ky7rQdD4ipD_kB__Cblc0y52XSHzrEGBSAsG_9v66dCaHvALeJugd-03JrmrEUve1sYfQ9P7qQFE5MrHzLc_c3nQ7Y1pU5B_Kp_O-3oVqX6eOzjP0KZUiCJIJz7VtoP1Yj8CF4GDrwy8cR5ObNE6dWlFEaaOw6ooA=.session"  # Session file ka naam (e.g., session_file.session)
 
 # BotFather Token (for cloning feature)
 BOT_TOKEN = "7345897707:AAHWi7-DSbv9VASFSP6nXGQIsu_oKdq8Vl4"
