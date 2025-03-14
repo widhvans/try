@@ -161,4 +161,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-Main turant fix kar dunga! Yeh code ab channel posts pe bhi react karega.
