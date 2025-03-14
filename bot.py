@@ -1,23 +1,30 @@
-import os
 import random
 from telethon import TelegramClient, events
 from telethon.tl.types import ReactionEmoji
 from pymongo import MongoClient
 
 # --------------------- Configuration Variables ---------------------
-API_ID = 123456  # Your API ID from my.telegram.org
-API_HASH = "your_api_hash_here"  # Your API Hash from my.telegram.org
-PHONE_NUMBER = "+1234567890"  # Your phone number (with country code)
-SESSION_NAME = "bot_session"  # Session file name
+API_ID = 28196292  # Your API ID from my.telegram.org (Apna API ID daal do)
+API_HASH = "7938119512:AAG3r2E3ag7UEo75wVGkLK9zFWpK7k97SYM"  # Your API Hash from my.telegram.org (Apna API Hash daal do)
+SESSION_FILE = "1BJWap1sBu6RdktbIA6aJGooNFEGKK8_hXJmVyNyGwXNzG4U6RzkC0wVG_j4FXU3fdKFKN8pVnVKzIOkQGoZ4xxXHWB0dQfBUgCWnaOsnsLt2l00R9y8LGk9tWJsrtm0MJPVuJw3-SJwmd25QmQ7W7PLjtnpzmbWp-M4tOP2Aj3UeRwz7yuEMxKf00DB0l8ky7rQdD4ipD_kB__Cblc0y52XSHzrEGBSAsG_9v66dCaHvALeJugd-03JrmrEUve1sYfQ9P7qQFE5MrHzLc_c3nQ7Y1pU5B_Kp_O-3oVqX6eOzjP0KZUiCJIJz7VtoP1Yj8CF4GDrwy8cR5ObNE6dWlFEaaOw6ooA="  # Session file ka naam (e.g., session_file.session)
 
-MONGO_URI = "mongodb+srv://your_username:your_password@cluster0.mongodb.net/your_db_name?retryWrites=true&w=majority"
+# BotFather Token (for cloning feature)
+BOT_TOKEN = "7345897707:AAHWi7-DSbv9VASFSP6nXGQIsu_oKdq8Vl4"
+
+# MongoDB Configuration
+MONGO_URI = "mongodb+srv://soniji:soniji@cluster0.i5zy74f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "telegram_bot_db"
 USERS_COLLECTION = "users"
 CLONES_COLLECTION = "cloned_bots"
 
-FORCE_SUB_CHANNEL = "@your_channel_username"  # Force subscription channel
-REACTION_EMOJIS = ["👍", "❤", "🔥", "😂", "😍", "👏"]  # Reaction options
-ADMIN_ID = 123456789  # Your Telegram ID
+# Force Subscription Channel
+FORCE_SUB_CHANNEL = "@joinnowearn"
+
+# Reaction Emojis (Multiple Reactions)
+REACTION_EMOJIS = ["👍", "❤", "🔥", "😂", "😍", "👏"]
+
+# Admin Configuration
+ADMIN_ID = 123456789  # Apna Telegram user ID daal do
 
 # --------------------- MongoDB Setup ---------------------
 client_db = MongoClient(MONGO_URI)
@@ -26,7 +33,8 @@ users_collection = db[USERS_COLLECTION]
 clones_collection = db[CLONES_COLLECTION]
 
 # --------------------- Telegram Client Setup ---------------------
-client = TelegramClient(SESSION_NAME, API_ID, API_HASH)
+# Session file ke saath client initialize kiya gaya
+client = TelegramClient(SESSION_FILE, API_ID, API_HASH)
 
 # --------------------- Helper Functions ---------------------
 def get_random_reaction():
@@ -62,7 +70,7 @@ async def start(event):
     )
 
 # Auto Reaction on Channel/Group Posts
-@client.on(events.NewMessage(chats=[FORCE_SUB_CHANNEL]))  # Add more channels/groups if needed
+@client.on(events.NewMessage(chats=[FORCE_SUB_CHANNEL]))
 async def auto_react(event):
     if event.is_channel or event.is_group:
         reaction = get_random_reaction()
@@ -126,9 +134,9 @@ async def broadcast(event):
 
 # --------------------- Main Function ---------------------
 async def main():
-    await client.start(phone=PHONE_NUMBER)
+    await client.start()  # Session file se automatically connect hoga
     print("Bot is running...")
     await client.run_until_disconnected()
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     client.loop.run_until_complete(main())
