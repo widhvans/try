@@ -5,21 +5,21 @@ from pymongo import MongoClient
 
 # --------------------- Configuration Variables ---------------------
 # Bot Token from BotFather
-BOT_TOKEN = "your_bot_token_here"  # BotFather se mila token yahan dalo
+BOT_TOKEN = "7530428356:AAEIqnXFYd4yuKTcS12LpmziyPM9phTpQDc"  # BotFather se mila token yahan dalo
 
 # MongoDB Configuration
-MONGO_URI = "mongodb+srv://your_username:your_password@cluster0.mongodb.net/your_db_name?retryWrites=true&w=majority"  # Apna MongoDB URI yahan dalo
+MONGO_URI = "mongodb+srv://soniji:soniji@cluster0.i5zy74f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  # Apna MongoDB URI yahan dalo
 DB_NAME = "telegram_bot_db"  # Database ka naam
 USERS_COLLECTION = "users"  # Collection ka naam jahan user data save hoga
 
 # Force Subscription Channel
-FORCE_SUB_CHANNEL = "@your_channel_username"  # Channel username jahan subscription force karna hai
+FORCE_SUB_CHANNEL = "@joinnowearn"  # Channel username jahan subscription force karna hai
 
 # Reaction Emoji
 REACTION_EMOJI = "👍"  # Group ya channel mein auto reaction ke liye emoji
 
 # Admin Configuration
-ADMIN_ID = 123456789  # Bot owner ka Telegram user ID (broadcast ke liye)
+ADMIN_ID = 1938030055  # Bot owner ka Telegram user ID (broadcast ke liye)
 
 # --------------------- MongoDB Setup ---------------------
 client = MongoClient(MONGO_URI)
